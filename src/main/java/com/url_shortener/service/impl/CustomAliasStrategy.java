@@ -39,23 +39,12 @@ public class CustomAliasStrategy implements UrlShortenerStrategy {
                 throw new CustomAliasExistsException("Custom alias already exists " + urlShortenRequest.getCustomAlias());
             }
             String shortUrl = urlShortenerUtil.getShortUrl(urlShortenRequest.getCustomAlias());
-            save(urlShortenRequest, shortUrl);
+            urlShortenerRepository.save(urlShortenRequest, shortUrl);
             return shortUrl;
 
         } catch (Exception e) {
             log.error("Exception occurred while generateShortUrl :{}", e.getMessage(), e);
             throw e;
         }
-    }
-
-    private void save(UrlShortenRequest urlShortenRequest, String shortUrl) {
-        UrlDocument urlDocument = new UrlDocument();
-        urlDocument.setId(UUID.randomUUID().toString());
-        urlDocument.setLongUrl(urlShortenRequest.getLongUrl());
-        urlDocument.setShortUrl(shortUrl);
-        urlDocument.setCreatedAt(new Date());
-        urlDocument.setUpdatedAt(new Date());
-        urlDocument.setExpirationDate(urlShortenRequest.getExpirationDate());
-        urlShortenerRepository.save(urlDocument);
     }
 }
