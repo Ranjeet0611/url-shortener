@@ -19,4 +19,15 @@ public class UrlDocument {
     private Date updatedAt;
     private Date expirationDate;
     private boolean isExpired;
+
+    @Override
+    public String toString() {
+        return "UrlDocument{" +
+                "id='" + id + '\'' +
+                ", longUrl='" + longUrl + '\'' +
+                ", shortUrl='" + shortUrl + '\'' +
+                ", expirationDate=" + expirationDate +
+                ", isExpired=" + isExpired +
+                '}';
+    }
 }
