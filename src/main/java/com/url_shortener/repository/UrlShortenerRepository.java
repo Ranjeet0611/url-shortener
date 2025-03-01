@@ -5,5 +5,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UrlShortenerRepository extends MongoRepository<UrlDocument, String>,CustomUrlShortenerRepository {
+public interface UrlShortenerRepository extends MongoRepository<UrlDocument, String>, CustomUrlShortenerRepository {
 }

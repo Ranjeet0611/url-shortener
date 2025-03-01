@@ -41,8 +41,8 @@ public class BasicUrlShortenerStrategy implements UrlShortenerStrategy {
             String ecodedString = Base64.getEncoder().encodeToString(longAsByteArray);
             String shortUrl = urlShortenerUtil.getShortUrl(ecodedString);
             urlShortenerRepository.save(urlShortenRequest, shortUrl);
-            cacheService.hSet(SHORT_LONG_URL_MAPPING,shortUrl,urlShortenRequest.getLongUrl());
-            log.info("Short url created :{} ",shortUrl);
+            cacheService.hSet(SHORT_LONG_URL_MAPPING, shortUrl, urlShortenRequest.getLongUrl());
+            log.info("Short url created :{} ", shortUrl);
             return shortUrl;
         } catch (Exception e) {
             log.error("Exception occurred while generateShortUrl :{}", e.getMessage(), e);

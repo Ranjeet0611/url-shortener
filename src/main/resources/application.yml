@@ -1,6 +1,7 @@
 spring:
   application:
     host: ${URL_SHORTENER_HOST:localhost}
+    port: 8080
     name: url-shortener
   data:
     redis:

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler({CustomAliasExistsException.class})
-    public ResponseEntity<ErrorResponse<String>> handleCustomAliasAlreadyExistsException(Exception e){
+    public ResponseEntity<ErrorResponse<String>> handleCustomAliasAlreadyExistsException(Exception e) {
         ErrorResponse<String> errorResponse = new ErrorResponse.ErrorResponseBuilder<String>().setMessage(e.getMessage()).build();
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }

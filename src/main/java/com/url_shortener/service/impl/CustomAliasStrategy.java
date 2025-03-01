@@ -45,7 +45,7 @@ public class CustomAliasStrategy implements UrlShortenerStrategy {
             }
             String shortUrl = urlShortenerUtil.getShortUrl(urlShortenRequest.getCustomAlias());
             urlShortenerRepository.save(urlShortenRequest, shortUrl);
-            cacheService.hSet(SHORT_LONG_URL_MAPPING,shortUrl,urlShortenRequest.getLongUrl());
+            cacheService.hSet(SHORT_LONG_URL_MAPPING, shortUrl, urlShortenRequest.getLongUrl());
             return shortUrl;
 
         } catch (Exception e) {
