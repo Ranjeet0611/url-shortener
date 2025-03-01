@@ -2,7 +2,6 @@ package com.url_shortener.service.impl;
 
 import com.url_shortener.service.BloomFilterService;
 import io.micrometer.common.util.StringUtils;
-import io.netty.util.internal.StringUtil;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

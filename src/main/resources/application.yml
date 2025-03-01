@@ -32,3 +32,8 @@ redis:
       key: ${BLOOM_FILTER_KEY:custom_alias}
     init:
       key: ${BLOOM_FILTER_CREATED:bloom_filter_created}
+  short:
+    long:
+      url:
+        mapping:
+          key: ${REDIS_SHORT_LONG_URL_MAPPING_KEY:short_long_url_mapping}

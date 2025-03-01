@@ -10,9 +10,9 @@ import redis.clients.jedis.UnifiedJedis;
 public class JedisConfig {
     @Value("${spring.data.redis.host}")
     private String REDIS_HOST;
+
     @Value("${spring.data.redis.port}")
     private Integer REDIS_PORT;
-
 
     @Bean
     public JedisPool jedisPool() {
