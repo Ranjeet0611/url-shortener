@@ -29,7 +29,7 @@ public class BasicUrlShortenerStrategy implements UrlShortenerStrategy {
     @Autowired
     private CacheService cacheService;
 
-    @Value("${redis.short.long.url.mapping}")
+    @Value("${redis.short.long.url.mapping.key}")
     private String SHORT_LONG_URL_MAPPING;
 
     @Override

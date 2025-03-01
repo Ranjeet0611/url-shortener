@@ -8,8 +8,6 @@ import redis.clients.jedis.JedisPool;
 public abstract class CacheService {
     @Autowired
     private JedisPool jedisPool;
-    @Value("${redis.short.long.url.mapping}")
-    protected String SHORT_LONG_URL_MAPPING;
 
     public Jedis getResource() {
         return jedisPool.getResource();

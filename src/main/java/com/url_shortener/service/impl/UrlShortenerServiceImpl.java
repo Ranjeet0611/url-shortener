@@ -27,7 +27,7 @@ public class UrlShortenerServiceImpl implements UrlShortenerService {
     @Qualifier("basicUrlShortenerStrategy")
     private UrlShortenerStrategy basicUrlShortenerStrategy;
 
-    @Value("${redis.short.long.url.mapping}")
+    @Value("${redis.short.long.url.mapping.key}")
     private String SHORT_LONG_URL_MAPPING;
 
     @Autowired

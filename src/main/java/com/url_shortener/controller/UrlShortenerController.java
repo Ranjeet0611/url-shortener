@@ -21,10 +21,4 @@ public class UrlShortenerController {
         Response<String> shortMessageCreatedSuccessfully = new Response.ResponseBuilder<String>().setData(shortUrl).setMessage("Short url created Successfully").build();
         return new ResponseEntity<>(shortMessageCreatedSuccessfully, HttpStatus.OK);
     }
-
-    @GetMapping
-    public RedirectView redirect(@PathVariable String alias) {
-        String longUrl = urlShortenerService.getLongUrl(alias);
-        return new RedirectView(longUrl);
-    }
 }

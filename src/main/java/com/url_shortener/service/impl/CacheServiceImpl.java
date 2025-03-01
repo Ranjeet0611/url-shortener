@@ -13,7 +13,7 @@ public class CacheServiceImpl extends CacheService {
         try {
             log.info("Start hSet :{} :{} :{}", cacheKey, key, value);
             Jedis resource = getResource();
-            return resource.hset(SHORT_LONG_URL_MAPPING, key, value);
+            return resource.hset(cacheKey, key, value);
         } catch (Exception e) {
             log.error("Exception occurred while hSet :{}", e.getMessage(), e);
         }
