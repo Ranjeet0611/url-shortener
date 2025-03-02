@@ -13,4 +13,9 @@ public class GlobalExceptionHandler {
         ErrorResponse<String> errorResponse = new ErrorResponse.ErrorResponseBuilder<String>().setMessage(e.getMessage()).build();
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
+    @ExceptionHandler({ShortUrlNotFoundException.class})
+    public ResponseEntity<ErrorResponse<String>> handleShortUrlNotFoundException(Exception e){
+        ErrorResponse<String> errorResponse = new ErrorResponse.ErrorResponseBuilder<String>().setMessage(e.getMessage()).build();
+        return new ResponseEntity<>(errorResponse,HttpStatus.NOT_FOUND);
+    }
 }
