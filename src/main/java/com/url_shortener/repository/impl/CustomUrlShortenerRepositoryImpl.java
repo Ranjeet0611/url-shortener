@@ -56,11 +56,11 @@ public class CustomUrlShortenerRepositoryImpl implements CustomUrlShortenerRepos
         try {
             log.info("Start getLongUrl :{}", shortUrl);
             Query query = Query.query(Criteria.where(shortUrl).is(shortUrl).and(IS_EXPIRED).is(false));
-            List<String> longUrl = mongoTemplate.find(query, String.class);
-            if (CollectionUtils.isEmpty(longUrl)) {
+            List<UrlDocument> urlDocuments = mongoTemplate.find(query, UrlDocument.class);
+            if (CollectionUtils.isEmpty(urlDocuments)) {
                 throw new ShortUrlNotFoundException("Short url not found or either expired");
             }
-            return longUrl.get(0);
+            return urlDocuments.get(0).getLongUrl();
         } catch (Exception e) {
             log.error("Exception occurred while getLongUrl :{}", e.getMessage(), e);
             throw e;
