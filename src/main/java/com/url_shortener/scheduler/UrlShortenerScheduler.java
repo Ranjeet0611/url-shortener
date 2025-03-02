@@ -15,7 +15,7 @@ public class UrlShortenerScheduler {
     @Autowired
     private UrlShortenerRepository urlShortenerRepository;
 
-    @Scheduled(cron = "0 0 * * * *")
+    @Scheduled(cron = "${cron.expression.to.expire.url}")
     public void checkForUrlToExpire() {
         try {
             log.info("Start checking url to mark expire");

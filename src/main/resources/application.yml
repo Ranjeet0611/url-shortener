@@ -38,3 +38,8 @@ redis:
       url:
         mapping:
           key: ${REDIS_SHORT_LONG_URL_MAPPING_KEY:short_long_url_mapping}
+cron:
+  expression:
+    to:
+      expire:
+        url:  ${CRON_EXPRESSION_TO_EXPIRE_URL:0 0 * * * *}
