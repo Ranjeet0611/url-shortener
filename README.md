@@ -6,8 +6,13 @@ It lets you shorten long URLs, supports custom aliases, and allows optional link
 🎯 Key Features:
 
 ✅ Shorten long URLs to easy, shareable links
+
 ✅ Fast HTTP redirection to original URLs
+
 ✅ Support for custom short URL aliases
+
 ✅ Optional link expiry support
+
 ✅ Built with Java Spring Boot and MongoDB
+
 ✅ Simple and self-hosted — easy to run locally
